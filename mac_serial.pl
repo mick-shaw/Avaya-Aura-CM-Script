@@ -25,9 +25,11 @@ use strict;
 #  Module (cli_ossi.pm).
 #
 # Note: If the $PBX variable changes, the OSSI Module must
-#       be updated as well
+#       be updated as well 
 #
-# Note: 2420 Handsets registered as IP-Agents are excluded
+# Note: You may want to exclude CTI end-points.  
+# 	    CTI endpoints typically show up as your AES
+#		
 #
 #
 ###########################################################
