@@ -40,7 +40,7 @@ use strict;
 # Communication Manager via XML Interface.
 # https://github.com/benroy73/pbxd/blob/master/pbx_lib/lib/PBX/DEFINITY.pm
 
-require "/opt/AvayaOSSI/cli_ossi.pm";
+require "/opt/AvayaWebservice/cli_ossi.pm";
 import cli_ossi;
 ###########################################################
 
@@ -56,7 +56,7 @@ import cli_ossi;
 # modules can be downloaded from
 # https://snmp-session.googlecode.com/files/SNMP_Session-1.13.tar.gz
 
-use lib '/opt/AvayaOSSI/SNMP_Session-1.13/lib';
+use lib '/opt/AvayaWebservice/SNMP_Session-1.13/lib';
 use BER;
 use SNMP_util;
 use SNMP_Session;
@@ -92,6 +92,7 @@ my $help =0;
 my $node;
 my $voipphone;
 my $MIB1;
+my $MIB2;
 my $value;
 my $serialnumber;
 my $phonefields;
@@ -147,13 +148,19 @@ sub getserialnum {
 	my ($node) = @_;
 
 	$MIB1 = "1.3.6.1.4.1.6889.2.69.2.1.46.0";
-($value) = &snmpget("$snmp_ro\@$node","$MIB1");
-if ($value) { return "$value"; }
-else { return  "No response from host :$node"; } 
-	
-	return;
+	$MIB2 = "1.3.6.1.4.1.6889.2.69.5.1.79.0";
 
-}
+($value) = &snmpget("$snmp_ro\@$node","$MIB2");
+if ($value) { return "$value"; }
+else{ ($value) = &snmpget("$snmp_ro\@$node","$MIB1");
+
+	if ($value) { return "$value"; }
+
+else {	
+	return  "No response from host :$node"; } 
+
+	return;
+}}
 
 sub getRegisteredPhones
 {
@@ -177,17 +184,14 @@ unless( $node && $node->status_connection() ) {
 }
 # Print out CSV column headers.
 
-print "Extension,Serial Number,Programmed Set Type,
-IP Address,Service State,Connected Set Type,MAC Address,Firmware"."\n";
-
+print "Extension,Serial Number,Programmed Set Type,IP Address,Service State,Connected Set Type,MAC Address,Firmware"."\n";
 
 foreach $voipphone (getRegisteredPhones($node))
 
 {
-	# TODO:I don't believe this if statement is applicable for this foreach loop.
-	# I think this might be garbage from another subroutine. 
 
-	if ($voipphone->{$PBXgetSetType} ne '2420')
+	# Exclude any adresses - For example, I don't want the Avaya AES. 
+	if ($voipphone->{$PBXgetIPaddress} !~ /~10\.88\.1\.36/)
 	{
         $serialnumber = getserialnum($voipphone->{$PBXgetIPaddress});
 	print  $voipphone->{$PBXgetExtension}.",";
