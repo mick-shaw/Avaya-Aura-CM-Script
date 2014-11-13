@@ -8,6 +8,7 @@ use strict;
 # Author: Mick Shaw
 # File: mac_serial.pl
 # Company: Potomac Integration and Consulting
+# Website: www.potomacintegration.com
 # Date: 011/09/2015
 #
 # MAC Address, Serial Number and Firmware Report for Avaya
