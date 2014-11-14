@@ -193,7 +193,7 @@ foreach $voipphone (getRegisteredPhones($node))
 {
 
 	# Exclude any adresses - For example, I don't want the Avaya AES. 
-	if ($voipphone->{$PBXgetIPaddress} !~ /~10\.88\.1\.36/)
+	if ($voipphone->{$PBXgetIPaddress} !~ /^10\.88\.1\.36/)
 	{
         $serialnumber = getserialnum($voipphone->{$PBXgetIPaddress});
 	print  $voipphone->{$PBXgetExtension}.",";
