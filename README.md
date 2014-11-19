@@ -1,6 +1,6 @@
 Avaya-Aura-CM-Script
 ====================
- here are a few data elements that cannot easily be gathered through the traditional system administration terminal or System Manager. I find it useful to perform an audit of all of your Avaya H323 endpoints before and after upgrades. In the event you lose an endpoint, knowing the mac-address can significantly help you track down the endpoint to a specific port. Unfortunately, the only means of doing this is to perform a status station on each and every endpoint - not very practical or efficient when you're dealing with thousands of endpoints.
+There are a few data elements that cannot easily be gathered through the traditional system administration terminal or System Manager. I find it useful to perform an audit of all of your Avaya H323 endpoints before and after upgrades. In the event you lose an endpoint, knowing the mac-address can significantly help you track down the endpoint to a specific port. Unfortunately, the only means of doing this is to perform a status station on each and every endpoint - not very practical or efficient when you're dealing with thousands of endpoints.
 
 In addition, there is useful information about the end-points that can only be gathered via SNMP. For example, the serial number of the phone, the list of alternate gate keepers, active DHCP server, etc. Unless you have expensive management tools already actively managing these devices, it can be extremely difficult to gather this information.
 
