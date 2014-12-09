@@ -9,25 +9,22 @@
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <h1 class="header">Avaya-aura-cm-script</h1>
-        <p class="header"></p>
-
+      <header class="without-description">
+        <h1>Avaya-aura-cm-script</h1>
+        <p></p>
+        <p class="view"><a href="https://github.com/mick-shaw/Avaya-Aura-CM-Script">View the Project on GitHub <small>mick-shaw/Avaya-Aura-CM-Script</small></a></p>
         <ul>
-          <li class="download"><a class="buttons" href="https://github.com/mick-shaw/Avaya-Aura-CM-Script/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/mick-shaw/Avaya-Aura-CM-Script/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/mick-shaw/Avaya-Aura-CM-Script">View On GitHub</a></li>
+          <li><a href="https://github.com/mick-shaw/Avaya-Aura-CM-Script/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mick-shaw/Avaya-Aura-CM-Script/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mick-shaw/Avaya-Aura-CM-Script">View On <strong>GitHub</strong></a></li>
         </ul>
-
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mick-shaw">mick-shaw</a></p>
-
-
       </header>
       <section>
         <hr>
@@ -39,11 +36,11 @@
 <h3>
 <a id="mac-address-sn-and-firmware-report-for-avaya-ip-endpoints" class="anchor" href="#mac-address-sn-and-firmware-report-for-avaya-ip-endpoints" aria-hidden="true"><span class="octicon octicon-link"></span></a>MAC-Address, SN, and Firmware Report for Avaya IP Endpoints</h3>
 
-<p>There are a few data elements that cannot easily be gathered through the traditional system administration terminal or System Manager. I find it useful to perform an audit of all of your Avaya H323 endpoints before and after upgrades. In the event you lose an endpoint, knowing the mac-address can significantly help you track down the endpoint to a specific port. Unfortunately, the only means of doing this is to perform a status station on each and every endpoint - not very practical or efficient when you're dealing with thousands of endpoints.</p>
+<p>There are a few data elements that cannot easily be gathered through the traditional system administration terminal or System Manager. PIC Engineers find it useful to perform an audit of all H323 endpoints before and after upgrades. In the event you lose an endpoint, knowing the mac-address can significantly help track down the endpoint to a specific port. Unfortunately, the only means of doing this is to perform a status station on each and every endpoint - not very practical or efficient when you're dealing with thousands of endpoints and trying to restore service.</p>
 
 <p>In addition, there is useful information about the end-points that can only be gathered via SNMP. For example, the serial number of the phone, the list of alternate gate keepers, active DHCP server, etc.  Unless you have expensive management tools already actively managing these devices, it can be extremely difficult to gather this information.</p>
 
-<p>This script in its current form can be used to generate a CSV report of the following elements:</p>
+<p>This application in its current form can be used to generate a CSV report of the following elements:</p>
 
 <ul>
 <li>Extension</li>
@@ -68,11 +65,12 @@
 
 <p>The SNMP modules included should not be confused with the SNMP perl modules found in CPAN (i.e. Net::SNMP). The modules I've included were previously maintained by <a href="http://www.switch.ch/misc/leinen/snmp/perl/">http://www.switch.ch/misc/leinen/snmp/perl/</a> They are now publicly available on code.google.com/p/snmp-session The entire package which includes all three modules can be downloaded from <a href="https://snmp-session.googlecode.com/files/SNMP_Session-1.13.tar.gz">https://snmp-session.googlecode.com/files/SNMP_Session-1.13.tar.gz</a></p>
       </section>
-      <footer>
-        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
-      </footer>
     </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/mick-shaw">mick-shaw</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+    
   </body>
 </html>
