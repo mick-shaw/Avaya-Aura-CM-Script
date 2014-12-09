@@ -4,7 +4,7 @@ There are a few data elements that cannot easily be gathered through the traditi
 
 In addition, there is useful information about the end-points that can only be gathered via SNMP. For example, the serial number of the phone, the list of alternate gate keepers, active DHCP server, etc. Unless you have expensive management tools already actively managing these devices, it can be extremely difficult to gather this information.
 
-This script in its current form can be used to generate a CSV report of the following elements:
+This program in its current form can be used to generate a CSV report of the following elements:
 
 * Extension
 * Serial number
